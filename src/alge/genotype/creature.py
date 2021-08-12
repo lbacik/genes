@@ -11,6 +11,9 @@ class Creature():
         self._phenotype = phenotype
         self._fitness = fitness
 
+    def __getitem__(self, item):
+        return self._phenotype[item]
+
     def phenotype(self) -> Phenotype:
         return self._phenotype
 

@@ -20,7 +20,9 @@ class Population:
 
     def __next__(self):
         if self._iter_next < len(self._population):
-            return self._population[self._iter_next]
+            result = self._population[self._iter_next]
+            self._iter_next += 1
+            return result
         else:
             raise StopIteration
 
