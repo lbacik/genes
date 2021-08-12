@@ -13,3 +13,8 @@ class Phenotype(Sized):
     def __len__(self) -> int:
         return len(self._data)
 
+    def __getitem__(self, item) -> bool:
+        return self._data[item]
+
+    def data(self) -> List[bool]:
+        return self._data
