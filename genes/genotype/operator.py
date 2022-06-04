@@ -1,6 +1,6 @@
 
 from abc import ABC, abstractmethod
-from alge.genotype.population import Population
+from .population import Population
 
 
 class Operator(ABC):

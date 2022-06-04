@@ -1,8 +1,8 @@
 import random
 
-from alge.genotype.creature import Creature
-from alge.genotype.operator import Operator
-from alge.genotype.population import Population
+from ..creature import Creature
+from ..operator import Operator
+from ..population import Population
 
 
 class Mutation(Operator):

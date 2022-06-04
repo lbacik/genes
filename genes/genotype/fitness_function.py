@@ -1,7 +1,7 @@
 
 from abc import ABC
 from abc import abstractmethod
-from alge.genotype.phenotype import Phenotype
+from .phenotype import Phenotype
 
 
 class FitnessFunction(ABC):

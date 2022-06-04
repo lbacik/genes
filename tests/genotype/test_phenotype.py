@@ -1,8 +1,8 @@
 import pytest
 from typing import Tuple
-from alge.genotype.phenotype import Phenotype
-from alge.genotype.phenotyped.error.phenotype_factory_error import PhenotypeFactoryError
-from alge.genotype.phenotyped.factory import  Factory as PhenotypeFactory
+from genes.genotype.phenotype import Phenotype
+from genes.genotype.phenotyped.error.phenotype_factory_error import PhenotypeFactoryError
+from genes.genotype.phenotyped.factory import  Factory as PhenotypeFactory
 
 
 def phenotypes_to_create() -> Tuple:

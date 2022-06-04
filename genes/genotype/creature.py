@@ -1,8 +1,8 @@
 
-from alge.genotype.phenotype import Phenotype
+from .phenotype import Phenotype
 
 
-class Creature():
+class Creature:
 
     _phenotype: Phenotype
     _fitness: float

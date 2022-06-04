@@ -18,3 +18,9 @@ class Phenotype(Sized):
 
     def data(self) -> List[bool]:
         return self._data
+
+    def __str__(self) -> str:
+        result: str = ''
+        for i in self._data:
+            result += '0' if i is False else '1'
+        return result

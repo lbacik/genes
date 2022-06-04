@@ -1,8 +1,8 @@
 
 import pytest
 from unittest import mock
-from ..api import GeneticAlgorithmApi
-from ..config import Config
+from genes.genalg.api import GeneticAlgorithmApi
+from genes.genalg.config import Config
 
 
 @pytest.fixture()

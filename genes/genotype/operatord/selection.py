@@ -1,8 +1,8 @@
 
 from typing import List
-from alge.genotype.operator import Operator
-from alge.genotype.creature import Creature
-from alge.genotype.population import Population
+from ..operator import Operator
+from ..creature import Creature
+from ..population import Population
 
 
 class Selection(Operator):
@@ -16,6 +16,9 @@ class Selection(Operator):
     def __init__(self, config: dict = None):
         if config is not None:
             self._config = config
+
+    def set_creatures_to_choose(self, number: int) -> None:
+        self._config[self.CREATURES_TO_CHOOSE] = number
 
     def do(self, population: Population) -> Population:
         parents: List[Creature] = []

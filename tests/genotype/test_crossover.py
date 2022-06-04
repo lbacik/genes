@@ -1,10 +1,10 @@
 import pytest
 
-from alge.genotype.creature import Creature
-from alge.genotype.operatord.crossover import Crossover
-from alge.genotype.operatord.selection import Selection
-from alge.genotype.phenotype import Phenotype
-from alge.genotype.population import Population
+from genes.genotype.creature import Creature
+from genes.genotype.operatord.crossover import Crossover
+from genes.genotype.operatord.selection import Selection
+from genes.genotype.phenotype import Phenotype
+from genes.genotype.population import Population
 
 
 @pytest.fixture

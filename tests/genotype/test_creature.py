@@ -1,5 +1,5 @@
-from ...genotype.creature import Creature
-from ...genotype.phenotyped.factory import  Factory as PhenotypeFactory
+from genes.genotype.creature import Creature
+from genes.genotype.phenotyped.factory import  Factory as PhenotypeFactory
 
 
 def test_creature_create():

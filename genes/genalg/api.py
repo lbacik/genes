@@ -6,7 +6,7 @@ from ..genotype.operator import Operator
 from ..genotype.population import Population
 from ..genotype.fitness_function import FitnessFunction
 # from ..genom.operator import Operator
-from alge.genalg.stats import Stats
+from .stats import Stats
 
 
 class GeneticAlgorithmApi():

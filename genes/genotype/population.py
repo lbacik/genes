@@ -1,5 +1,5 @@
 
-from alge.genotype.creature import Creature
+from .creature import Creature
 from typing import List
 
 

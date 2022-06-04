@@ -1,5 +1,5 @@
-from alge.genotype.phenotype import Phenotype
-from alge.genotype.phenotyped.error.phenotype_factory_error import PhenotypeFactoryError
+from ..phenotype import Phenotype
+from .error.phenotype_factory_error import PhenotypeFactoryError
 
 
 CHAR_0 = '0'

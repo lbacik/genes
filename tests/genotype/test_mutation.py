@@ -1,9 +1,9 @@
 import pytest
 
-from alge.genotype.creature import Creature
-from alge.genotype.operatord.mutation import Mutation
-from alge.genotype.phenotype import Phenotype
-from alge.genotype.population import Population
+from genes.genotype.creature import Creature
+from genes.genotype.operatord.mutation import Mutation
+from genes.genotype.phenotype import Phenotype
+from genes.genotype.population import Population
 
 
 @pytest.fixture

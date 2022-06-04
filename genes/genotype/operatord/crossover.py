@@ -1,9 +1,9 @@
 from random import randint
 from typing import Tuple
-from alge.genotype.operator import Operator
-from alge.genotype.creature import Creature
-from alge.genotype.population import Population
-from alge.genotype.phenotype import Phenotype
+from ..operator import Operator
+from ..creature import Creature
+from ..population import Population
+from ..phenotype import Phenotype
 
 
 class Crossover(Operator):
