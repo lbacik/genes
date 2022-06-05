@@ -6,6 +6,7 @@ from ..genotype.fitness_function import FitnessFunction
 from ..genotype.operatord.crossover import Crossover
 from ..genotype.operatord.mutation import Mutation
 from ..genotype.operatord.selection import Selection
+from ..stats.in_memory import InMemoryStats
 
 
 def create_from_operator_list(fitness_function: FitnessFunction, operators: OperatorList) -> GeneticAlgorithmApi:
@@ -16,10 +17,10 @@ def create_from_operator_list(fitness_function: FitnessFunction, operators: Oper
     if operators.mutation is not None:
         actions.append(operators.mutation)
 
-    return GeneticAlgorithmApi(None, Config(), fitness_function, actions)
+    return GeneticAlgorithmApi(None, Config(), fitness_function, actions, InMemoryStats())
 
 
-def create_from_operator_params(fitness_function: FitnessFunction, params: dict) -> GeneticAlgorithmApi:
+def create_from_operator_params(fitness_function: FitnessFunction, params: GAFactoryParams) -> GeneticAlgorithmApi:
 
     selection = Selection({
         Selection.CREATURES_TO_CHOOSE: params.population
