@@ -2,17 +2,17 @@ import pytest
 
 from genes.genotype.creature import Creature
 from genes.genotype.operatord.selection import Selection
-from genes.genotype.phenotype import Phenotype
+from genes.genotype.genotype import Genotype
 from genes.genotype.population import Population
 
 
 @pytest.fixture
 def population():
     result = Population([])
-    result.add(Creature(Phenotype([False, True]), 20))
-    result.add(Creature(Phenotype([True, True]), 10))
-    result.add(Creature(Phenotype([True, False]), 40))
-    result.add(Creature(Phenotype([False, False]), 30))
+    result.add(Creature(Genotype([False, True]), 20))
+    result.add(Creature(Genotype([True, True]), 10))
+    result.add(Creature(Genotype([True, False]), 40))
+    result.add(Creature(Genotype([False, False]), 30))
     return result
 
 

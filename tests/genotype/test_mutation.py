@@ -2,14 +2,14 @@ import pytest
 
 from genes.genotype.creature import Creature
 from genes.genotype.operatord.mutation import Mutation
-from genes.genotype.phenotype import Phenotype
+from genes.genotype.genotype import Genotype
 from genes.genotype.population import Population
 
 
 @pytest.fixture
 def population():
     result = Population([])
-    result.add(Creature(Phenotype([False])))
+    result.add(Creature(Genotype([False])))
     return result
 
 
@@ -18,7 +18,7 @@ def test_mutation_0(population):
     result = mutation.do(population)
 
     assert result.size() == 1
-    assert result[0].phenotype()[0] is False
+    assert result[0].genotype()[0] is False
 
 
 def test_mutation_100(population):
@@ -26,4 +26,4 @@ def test_mutation_100(population):
     result = mutation.do(population)
 
     assert result.size() == 1
-    assert result[0].phenotype()[0] is True
+    assert result[0].genotype()[0] is True

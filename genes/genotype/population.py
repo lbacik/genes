@@ -34,3 +34,9 @@ class Population:
 
     def sort_by_fitness(self) -> None:
         self._population.sort(key=lambda item: item._fitness, reverse=True)
+
+    def __str__(self):
+        result = []
+        for i in self._population:
+            result.append('\t'.join((i.fitness().__str__(), i.genotype().__str__())))
+        return '\n'.join(result)

@@ -3,12 +3,12 @@ from collections.abc import Sized
 from typing import List
 
 
-class Phenotype(Sized):
+class Genotype(Sized):
 
     _data: List[bool]
 
-    def __init__(self, phenotype: List[bool]):
-        self._data = phenotype
+    def __init__(self, genotype: List[bool]):
+        self._data = genotype
 
     def __len__(self) -> int:
         return len(self._data)

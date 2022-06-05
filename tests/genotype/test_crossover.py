@@ -3,16 +3,16 @@ import pytest
 from genes.genotype.creature import Creature
 from genes.genotype.operatord.crossover import Crossover
 from genes.genotype.operatord.selection import Selection
-from genes.genotype.phenotype import Phenotype
+from genes.genotype.genotype import Genotype
 from genes.genotype.population import Population
 
 
 @pytest.fixture
 def population():
     result = Population([])
-    result.add(Creature(Phenotype([False, False])))
-    result.add(Creature(Phenotype([True, True])))
-    result.add(Creature(Phenotype([False, False])))
+    result.add(Creature(Genotype([False, False])))
+    result.add(Creature(Genotype([True, True])))
+    result.add(Creature(Genotype([False, False])))
     return result
 
 
@@ -24,7 +24,7 @@ def test_crossover(population):
     result = crossover.do(population)
 
     assert result.size() == 1
-    assert result._population[0].phenotype()._data == [False, True]
+    assert result._population[0].genotype()._data == [False, True]
 
 
 def test_crossover_multi(population):
@@ -35,8 +35,8 @@ def test_crossover_multi(population):
     result = crossover.do(population)
 
     assert result.size() == 2
-    assert result._population[0].phenotype()._data == [False, True]
-    assert result._population[1].phenotype()._data == [False, True]
+    assert result._population[0].genotype()._data == [False, True]
+    assert result._population[1].genotype()._data == [False, True]
 
 
 def test_crossover_poly(population):
@@ -48,5 +48,5 @@ def test_crossover_poly(population):
     result = crossover.do(population)
 
     assert result.size() == 2
-    assert result._population[0].phenotype()._data == [False, True]
-    assert result._population[1].phenotype()._data == [False, False]
+    assert result._population[0].genotype()._data == [False, True]
+    assert result._population[1].genotype()._data == [False, False]

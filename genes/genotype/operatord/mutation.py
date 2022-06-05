@@ -21,6 +21,6 @@ class Mutation(Operator):
         creature: Creature
         for creature in population:
             if random.random() < self._config[self.MUTATION_PROBABILITY]:
-                index: int = random.randrange(0, len(creature.phenotype().data()))
-                creature.phenotype().data()[index] = not creature.phenotype().data()[index]
+                index: int = random.randrange(0, len(creature.genotype().data()))
+                creature.genotype().data()[index] = not creature.genotype().data()[index]
         return population

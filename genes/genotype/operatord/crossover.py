@@ -3,7 +3,7 @@ from typing import Tuple
 from ..operator import Operator
 from ..creature import Creature
 from ..population import Population
-from ..phenotype import Phenotype
+from ..genotype import Genotype
 
 
 class Crossover(Operator):
@@ -36,18 +36,18 @@ class Crossover(Operator):
 
     @staticmethod
     def child(parents: Tuple[Creature, Creature]) -> Creature:
-        phenotype_len = len(parents[0].phenotype())
-        # if len(parents[1].phenotype()) is not phenotype_len:
-        #     raise Exception('Parents have different phenotypes lengths!')
+        genotype_len = len(parents[0].genotype())
+        # if len(parents[1].genotype()) is not genotype_len:
+        #     raise Exception('Parents have different genotypes lengths!')
 
-        cross_point = randint(1, phenotype_len - 1)
-        # part1 = parents[0].phenotype()._data[0:cross_point]
-        # part2 = parents[1].phenotype()._data[cross_point:]
-        child_phenotype = Phenotype(
-            parents[0].phenotype()._data[0:cross_point] + parents[1].phenotype()._data[cross_point:]
+        cross_point = randint(1, genotype_len - 1)
+        # part1 = parents[0].genotype()._data[0:cross_point]
+        # part2 = parents[1].genotype()._data[cross_point:]
+        child_genotype = Genotype(
+            parents[0].genotype()._data[0:cross_point] + parents[1].genotype()._data[cross_point:]
         )
 
-        return Creature(child_phenotype)
+        return Creature(child_genotype)
 
     def _choose_parents(self, parent_index: int, population: Population) -> Tuple[Creature, Creature]:
         if self.CROSSOVER_TYPE in self._config and self._config[self.CROSSOVER_TYPE] == self.CROSSOVER_TYPE_POLY:

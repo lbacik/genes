@@ -1,21 +1,18 @@
 
-from .phenotype import Phenotype
+from .genotype import Genotype
 
 
 class Creature:
 
-    _phenotype: Phenotype
-    _fitness: float
-
-    def __init__(self, phenotype: Phenotype, fitness: float = 0):
-        self._phenotype = phenotype
+    def __init__(self, genotype: Genotype, fitness: float = 0):
+        self._genotype = genotype
         self._fitness = fitness
 
     def __getitem__(self, item):
-        return self._phenotype[item]
+        return self._genotype[item]
 
-    def phenotype(self) -> Phenotype:
-        return self._phenotype
+    def genotype(self) -> Genotype:
+        return self._genotype
 
     def fitness(self) -> float:
         return self._fitness

@@ -4,14 +4,14 @@ from ..genalg.stats import Stats
 
 class InMemoryStats(Stats):
 
-    def __init__(self, record_phenotypes=False):
-        self.record_phenotypes = record_phenotypes
+    def __init__(self, record_genotypes=False):
+        self.record_genotypes = record_genotypes
         self.population_history = []
         self.population_history_stats = []
 
     def add_fit_stats(self, population: Population) -> None:
         self.collect_population_stats(population)
-        if self.record_phenotypes:
+        if self.record_genotypes:
             self.population_history.append(population)
 
     def add_action_stats(self, stats: dict) -> None:

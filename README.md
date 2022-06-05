@@ -27,10 +27,10 @@ Sample **FitnessFunction**:
 
     class SimpleFitnessFunction(FitnessFunction):
     
-        def fit(self, phenotype: Genotype) -> float:
+        def fit(self, genotype: Genotype) -> float:
             n = 0
-            for i in phenotype:
-                if i is True:
+            for gen in genotype:
+                if gen is True:
                     n += 1
             return n
 

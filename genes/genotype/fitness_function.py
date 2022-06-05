@@ -1,11 +1,11 @@
 
 from abc import ABC
 from abc import abstractmethod
-from .phenotype import Phenotype
+from .genotype import Genotype
 
 
 class FitnessFunction(ABC):
 
     @abstractmethod
-    def fit(self, phenotype: Phenotype) -> float:
+    def fit(self, genotype: Genotype) -> float:
         pass
