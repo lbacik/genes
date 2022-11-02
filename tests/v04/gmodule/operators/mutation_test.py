@@ -10,10 +10,7 @@ GENE_SET = ['a', 'b']
 
 @pytest.fixture
 def mutation() -> Mutation:
-    return Mutation({
-        Mutation.PROBABILITY: 1,
-        Mutation.GENE_SET: GENE_SET,
-    })
+    return Mutation(GENE_SET, 1.0)
 
 
 @pytest.fixture

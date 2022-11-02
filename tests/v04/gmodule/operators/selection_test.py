@@ -19,17 +19,13 @@ def generation() -> Generation:
 
 
 def test_empty_select(generation: Generation) -> None:
-    selection = Selection({
-        Selection.QUANTITY: 0,
-    })
+    selection = Selection(quantity=0)
     result = selection.do(generation)
     assert result.size() == 0
 
 
 def test_select(generation: Generation) -> None:
-    selection = Selection({
-        Selection.QUANTITY: 2,
-    })
+    selection = Selection(quantity=2)
     result = selection.do(generation)
 
     assert result.size() == 2
@@ -38,9 +34,7 @@ def test_select(generation: Generation) -> None:
 
 
 def test_select_more(generation: Generation) -> None:
-    selection = Selection({
-        Selection.QUANTITY: generation.size() * 2,
-    })
+    selection = Selection(quantity=generation.size() * 2)
     result = selection.do(generation)
 
     assert result.size() == generation.size()

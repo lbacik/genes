@@ -9,7 +9,9 @@ GENOTYPE = ['0', '1', 'a', 'A', 'foo']
 
 @pytest.fixture
 def genotype() -> Genotype:
-    return Genotype(GENOTYPE)
+    genotype = Genotype(GENOTYPE)
+    genotype.str_separator = ' '
+    return genotype
 
 
 def test_create(genotype: Genotype) -> None:
