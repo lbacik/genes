@@ -1,7 +1,7 @@
 import pytest
 
 from genes.v04.gmodule.genotype import Genotype
-from genes.v04.factories.genotype_factory import genotype_factory
+from genes.v04.factories.genotype_factory import genotype_factory, genotype_from_str
 
 
 GENOTYPE = ['0', '1', 'a', 'A', 'foo']
@@ -24,9 +24,16 @@ def test_iterator(genotype: Genotype) -> None:
     for index, value in enumerate(genotype):
         assert value == GENOTYPE[index]
 
+
 def test_factory() -> None:
     genotype: Genotype = genotype_factory(['0', '1'], 1)
     assert isinstance(genotype, Genotype)
     assert genotype.length() == 1
     assert genotype.__str__() in {'0', '1'}
+
+
+def test_from_string() -> None:
+    genotype: Genotype = genotype_from_str(','.join(GENOTYPE), sep = ',')
+    for index, value in enumerate(genotype):
+        assert value == GENOTYPE[index]
 
